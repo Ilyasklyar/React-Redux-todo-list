@@ -20,3 +20,60 @@
 .App-link {
   color: #09d3ac;
 }
+
+.todo-item ul {
+  width: 50%;
+  margin: 15px auto;
+  padding: 0;
+}
+.todo-item ul li {
+  list-style-type: none;
+  background-color: #b0dff1;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 10px;
+  color:#777;
+  display: flex;
+  justify-content: space-between;
+}
+.del {
+  cursor: pointer;
+  color: red;
+  font-size: 25px;
+}
+h3{
+  color:#777;
+}
+.todo-list {
+  width: 60%;
+  margin:20px auto;
+  padding-bottom: 20px;
+  border: 2px solid #0985b6;
+}
+.text {
+  background-color: #73d1f7;
+  border: 1px solid #0985b6;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+  margin: 0 10px 15px 10px;
+  width:50%;
+  height: 50px;
+  resize: none;
+}
+.btn {
+  background-color: #73d1f7;
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  -webkit-transition: all 0.3s ease;;
+  -moz-transition: all 0.3s ease;;
+  -o-transition: all 0.3s ease;;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background-color: #188ebd;
+  color:#fff;
+}
