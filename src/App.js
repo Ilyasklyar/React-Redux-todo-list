@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ToDoPage from './components/ToDoPage'
+import ToDoContainer from './components/ToDoContainer'
 
 const App = (props) => {
   return (
     <div className="App">
-      <ToDoPage store={props.store} />
+      <ToDoContainer store={props.store} />
     </div>
   );
 }

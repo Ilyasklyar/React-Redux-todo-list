@@ -3,7 +3,7 @@ import todoReducer from './reducer-todo';
 
 
 let reducers = combineReducers({
-    allReducers: todoReducer
+    todoReducer
 });
 
 let store = createStore(reducers);

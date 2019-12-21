@@ -1,26 +1,36 @@
 import React from 'react';
 
-import { deleteTodo } from '../redux/reducer-todo';
 
 
 const ToDoItem = (props) => {
-    let state = props.store.getState().allReducers;
 
     let num = 1;
 
-    let onClickDelete = (e) => props.store.dispatch(deleteTodo(e));
-
     return (
-        <div className="todo-item">
-            <ul>
-                {state.todoItems.slice(1).map(i => (
-                    <li key={i.id} >
-                        <span className="item">{num++}. {i.todo}</span>
-                        <span className="del" onClick={() => onClickDelete(i)}>x</span>
-                    </li>
-                ))}
-            </ul>
+        <div className="todo-list">
+            <div>
+                <h3>My To Do</h3>
+            </div>
+            <div>
+                <textarea onChange={(e) => { props.onTodoChange(e) }} value={props.newTodoText} className="text" />
+            </div>
+            <div>
+                <button onClick={() => { props.addTodoItem() }} className="btn">add new task</button>
+            </div>
+            <div>
+                <div className="todo-item">
+                    <ul>
+                        {props.todoItems.slice(1).map(i => (
+                            <li key={i.id} >
+                                <span className="item">{num++}. {i.todo}</span>
+                                <span className="del" onClick={() => { props.onClickDelete(i) }}>x</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
         </div>
+
     )
 }
 
