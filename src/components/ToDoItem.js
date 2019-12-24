@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 const ToDoItem = (props) => {
@@ -19,14 +19,20 @@ const ToDoItem = (props) => {
             </div>
             <div>
                 <div className="todo-item">
-                    <ul>
+                    <TransitionGroup component="ul">
                         {props.todoItems.slice(1).map(i => (
-                            <li key={i.id} >
-                                <span className="item">{num++}. {i.todo}</span>
-                                <span className="del" onClick={() => { props.onClickDelete(i) }}>x</span>
-                            </li>
+                            <CSSTransition 
+                            key={i.id}
+                            classNames={"note"}
+                            timeout={1000}
+                            >
+                                <li>
+                                    <span className="item">{num++}. {i.todo}</span>
+                                    <span className="del" onClick={() => { props.onClickDelete(i) }}>x</span>
+                                </li>
+                            </CSSTransition>
                         ))}
-                    </ul>
+                    </TransitionGroup>
                 </div>
             </div>
         </div>
